@@ -7,10 +7,22 @@ using System.Text.RegularExpressions;
 
 namespace FormulaEvaluator
 {
+    /// <summary>
+    /// Static class made to serve as the Evaluator for expressions within the Spreadsheet solution
+    /// Sam Gera U1173758
+    /// 9.2.2020
+    /// CS 3500
+    /// </summary>
     public static class Evaluator
     {
         public delegate int Lookup(String v);
-
+        /// <summary>
+        /// Method to evaluate arithmetic expressions. 
+        /// Takes a LookUp delegate used to evaluate values of possible variables 
+        /// </summary>
+        /// <param name="exp"> given expression </param>
+        /// <param name="variableEvaluator"> function used to define variable values</param>
+        /// <returns>correct integer value of arithmetic expression</returns>
         public static int Evaluate(String exp, Lookup variableEvaluator)
         {
             //Parse Tokens
